@@ -15,7 +15,12 @@
         <module>Mail-member</module>
         <module>Mail-ware</module>
         <module>Mail-product</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>Mail-common</module>
     </modules>
+
+
 
 
 </project>
