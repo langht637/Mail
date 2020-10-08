@@ -1,5 +1,6 @@
 package com.zhongguo.mail.product.service.impl;
 
+import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -59,7 +60,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
     @Override
     public void removeMenuByIds(List<Long> asLists) {
-
+        new String();
         baseMapper.deleteBatchIds(asLists);
     }
 
