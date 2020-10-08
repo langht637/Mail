@@ -2,6 +2,7 @@ package com.zhongguo.mail.order.controller;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,9 @@ import com.zhongguo.mail.order.service.OrderService;
 import com.zhongguo.mail.common.utils.PageUtils;
 import com.zhongguo.mail.common.utils.R;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 
 /**
@@ -29,6 +33,25 @@ import com.zhongguo.mail.common.utils.R;
 public class OrderController {
     @Autowired
     private OrderService orderService;
+
+    @RequestMapping("/")
+    public void l(HttpServletRequest request, HttpServletResponse response){
+
+        System.out.print(request.getParameter("token"));
+       response.addCookie(new Cookie("username","123:::::::"));
+
+    }
+
+    @RequestMapping("/getcook")
+    public void la(HttpServletRequest request, HttpServletResponse response){
+
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+                    Arrays.stream(cookies)
+                    .forEach((a) ->System.out.print(a.getValue()));
+        }
+
+    }
 
     /**
      * 列表

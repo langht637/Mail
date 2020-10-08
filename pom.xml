@@ -18,6 +18,7 @@
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>Mail-common</module>
+        <module>Mail-gateway</module>
     </modules>
 
 

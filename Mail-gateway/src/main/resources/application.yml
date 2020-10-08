@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    username: root
+    password: 123456
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/gulimail_wms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+  cloud:
+    gateway:
+      routes:
+        - id: product_route
+          uri: lb://mail-product
+          predicates:
+              - Path=/api/product/**
+          filters:
+              - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+              - Path=/api/**
+          filters:
+              - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
+
+
+
+
+
+
+
+
+server:
+  port: 88
+

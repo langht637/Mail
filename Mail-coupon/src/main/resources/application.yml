@@ -3,7 +3,8 @@ spring:
     username: root
     password: 123456
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.111.11.24:3306/gulimail_sms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/gulimail_sms?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+  
 
 
 
@@ -15,3 +16,6 @@ mybatis-plus:
 
 server:
   port: 7000
+
+co.user: 123
+co.password: 123
