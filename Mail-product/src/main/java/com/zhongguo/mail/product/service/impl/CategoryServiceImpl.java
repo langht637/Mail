@@ -60,7 +60,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
     @Override
     public void removeMenuByIds(List<Long> asLists) {
-        new String();
+        String a = new String("1234");
         baseMapper.deleteBatchIds(asLists);
     }
 
